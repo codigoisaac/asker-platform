@@ -8,7 +8,8 @@
   </head>
   <body>
     <h1>
-      Bem vindo ao Asker, <%= name %>! Bora aprender mais sobre <%= lang %>.
+      Bem vindo ao Asker, <%= name %>! <% if (lang) { %> Bora aprender mais
+      sobre <%= lang %>. <% } else { %> Bora codar! <% } %>
     </h1>
   </body>
 </html>
