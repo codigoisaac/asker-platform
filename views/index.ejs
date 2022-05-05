@@ -13,6 +13,8 @@
       %>
     </h1>
 
-    <div><% stack.forEach((tech) => { tech }) %></div>
+    <div>
+      <% stack.forEach(tech => { %> <%= tech.name %>: <%= tech.xp %>xp; <% }) %>
+    </div>
   </body>
 </html>

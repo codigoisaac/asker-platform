@@ -7,8 +7,11 @@ ex.get('/:name?/:lang?', (req, res) => {
   const name = req.params.name
   const lang = req.params.lang
   const stack = [
-    { nome: 'Sanduba', preco: 17 },
-    { nome: 'Tea', preco: 3 }
+    { name: 'JavaScript', xp: 7 },
+    { name: 'Node.js', xp: 5 },
+    { name: 'Express.js', xp: 5 },
+    { name: 'MySQL', xp: 6 },
+    { name: 'Vue.js', xp: 7 }
   ]
 
   res.render('index', {
