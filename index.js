@@ -3,7 +3,7 @@ const ex = express()
 
 ex.set('view engine', 'ejs')
 
-ex.use(express.static('public'))
+ex.use(express.static('public')) // which folder to use for static files
 
 ex.get('/:name?/:lang?', (req, res) => {
   const name = req.params.name
