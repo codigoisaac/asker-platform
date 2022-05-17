@@ -1,24 +1,20 @@
 const express = require('express')
+const path = require('path')
+
 const ex = express()
+
+ex.use('/css', express.static(path.join(__dirname, 'node_modules/bootstrap/dist/css')))
+ex.use('/js', express.static(path.join(__dirname, 'node_modules/booststrap/dist/js')))
+ex.use('/js', express.static(path.join(__dirname, 'node_modules/jquery/dist')))
+
+
 
 ex.set('view engine', 'ejs')
 
 ex.use(express.static('public')) // which folder to use for static files
 
-ex.get('/:name?/:lang?', (req, res) => {
-  const name = req.params.name
-  const lang = req.params.lang
-  const stack = [
-    { name: 'JavaScript', xp: 7 },
-    { name: 'Node.js', xp: 5 },
-    { name: 'Express.js', xp: 5 },
-    { name: 'MySQL', xp: 6 },
-    { name: 'Vue.js', xp: 7 }
-  ]
-
-  res.render('index', {
-    name, lang, stack
-  })
+ex.get('/', (req, res) => {
+  res.render('index')
 })
 
 ex.listen(10, () => {
